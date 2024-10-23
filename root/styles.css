@@ -1,0 +1,21 @@
+body {
+  background-color: #f4f2fe;
+}
+
+.wrapper {
+  background-color: #83532e;
+  color: #f4f2fe;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 10px 30px 50px rgba(65, 58, 100, 0.7);
+  border: 2px solid #332a28;
+}
+
+img {
+  max-width: 130px;
+  display: flex;
+  right: 50px;
+  margin: -30px -30px 10px;
+}
