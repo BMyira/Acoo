@@ -4,17 +4,18 @@ body {
 }
 
 img {
-  width: 130px;
-  display: flex;
-  right: 50px;
-  margin: -30px -30px 0;
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
+  width: 170px;
+  position: relative;
+  top: -37px;
+  bottom: -10px;
+  left: -52px;
 }
 
 header {
   border-bottom: 1px solid #aa5d40;
   padding: 0 0 15px 0;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
 }
 
 main {
@@ -29,7 +30,8 @@ footer {
   color: #371610;
   background-image: url(" ../media/Acoo.jpg");
   border-radius: 15px;
-  padding-top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 13px;
   font-weight: bold;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
@@ -66,12 +68,12 @@ footer {
 
 .link {
   text-decoration: none;
-  color: #371610;
+  color: blue;
 }
 .link:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: blue;
+  color: #371610;
 }
 
 .wrapper {
@@ -85,6 +87,28 @@ footer {
   border: 2px solid #332a28;
 }
 
+.weather-app-container {
+  display: flex;
+}
+
+.weather-app-value {
+  font-size: 88px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: blue;
+}
+
+.weather-app-icon {
+  font-size: 60px;
+  margin-top: 22px;
+}
+
+.weather-app-unit {
+  margin-top: 20px;
+  font-size: 28px;
+  color: blue;
+}
+
 .search-form-input {
   background-color: #f4f2fe;
   border: 2px solid #371610;
@@ -92,19 +116,21 @@ footer {
   width: 70%;
   padding: 15px 20px;
   font-size: 16px;
-
+  border-radius: 16px;
   margin: 0 80px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .search-button {
   background-color: #371610;
   color: white;
   border: 1px solid white;
-  border-radius: 6px;
+  border-radius: 16px;
   width: 15%;
-  padding: 15px 20px;
+  padding: 15px 20px 15px 18px;
   margin: 0 -80px;
   font-size: 16px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .search-button:hover {
@@ -112,12 +138,6 @@ footer {
   background-color: white;
   border: 2px solid #371610;
   color: #371610;
-}
-
-.weather-app-temperature {
-  font-size: 48px;
-  font-weight: bold;
-  color: blue;
 }
 
 .search-form {
