@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rye&family=Train+One&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="root/styles.css" />
   </head>
   <body>
@@ -31,17 +32,17 @@
       <main>
         <div class="weather-app">
           <div>
-            <h1 class="weather-app-city" id="weather-app-city">Cape Town</h1>
+            <h1 class="weather-app-city" id="weather-app-city"></h1>
             <p class="weather-app-details">
               <span class="day-time"></span>, scattered clouds <br />
               Humidity: <span class="humidity">66%</span> , Wind:
               <span class="wind-speed">3. 13km/h</span>
             </p>
           </div>
-          <div class="weather-app-container">
-            <div class="weather-app-icon">🌤</div>
-            <div class="weather-app-value">12</div>
-            <div class="weather-app-unit">°C</div>
+          <div class="weather-app-container" id="weather-app-container">
+            <div class="weather-app-icon" id="weather-app-icon">🌤</div>
+            <div class="weather-app-value" id="weather-app-value"></div>
+            <div class="weather-app-unit" id="weather-app-unit">°C</div>
           </div>
         </div>
       </main>
