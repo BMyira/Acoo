@@ -2,6 +2,14 @@ function showTemperature(response) {
   let weatherTemperature = document.querySelector("#weather-app-value");
   let temperatureElement = Math.round(response.data.temperature.current);
   let h1 = document.querySelector("#weather-app-city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
+
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  descriptionElement.innerHTML = response.data.condition.description;
   h1.innerHTML = response.data.city;
   weatherTemperature.innerHTML = temperatureElement;
 }
@@ -23,6 +31,14 @@ function currentTime(date) {
   let day = date.getDay();
   let hour = date.getHours();
   let minutes = date.getMinutes();
+
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = [
     "Sunday",
