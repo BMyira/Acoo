@@ -30,7 +30,7 @@ footer {
   color: #371610;
   background-image: url(" ../media/Acoo.jpg");
   border-radius: 15px;
-  padding-top: 5px;
+  padding-top: 0;
   padding-bottom: 5px;
   font-size: 13px;
   font-weight: bold;
@@ -143,4 +143,14 @@ footer {
 .search-form {
   margin: -60px 20px 10px 30px;
   padding: 0;
+}
+
+.hand-arrow-right {
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+.hand-arrow-left {
+  font-size: 16px;
+  padding-right: 15px;
 }
