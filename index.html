@@ -17,12 +17,13 @@
     <div class="wrapper">
       <img src="media/final.png" alt="logo" />
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city...."
             required
             class="search-form-input"
+            id="search-form-input"
           />
           <input type="submit" value="search" class="search-button" />
         </form>
@@ -30,9 +31,9 @@
       <main>
         <div class="weather-app">
           <div>
-            <h1 class="weather-app-city">Cape Town</h1>
+            <h1 class="weather-app-city" id="weather-app-city">Cape Town</h1>
             <p class="weather-app-details">
-              Tuesday 14:30, scattered clouds <br />
+              <span class="day-time"></span>, scattered clouds <br />
               Humidity: <span class="humidity">66%</span> , Wind:
               <span class="wind-speed">3. 13km/h</span>
             </p>
@@ -66,5 +67,6 @@
         >
       </footer>
     </div>
+    <script src="root/app.js"></script>
   </body>
 </html>
