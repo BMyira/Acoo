@@ -5,13 +5,13 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
-
+  let iconElement = document.querySelector("#weather-app-icon");
   windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
-
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   descriptionElement.innerHTML = response.data.condition.description;
   h1.innerHTML = response.data.city;
   weatherTemperature.innerHTML = temperatureElement;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function showCity(city) {

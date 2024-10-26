@@ -94,17 +94,20 @@ footer {
 .weather-app-value {
   font-size: 88px;
   font-weight: bold;
+  line-height: 88px;
   margin-left: 10px;
   color: blue;
 }
 
 .weather-app-icon {
-  font-size: 60px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
+  margin-right: -65px;
+  margin-top: 40px;
 }
 
 .weather-app-unit {
-  margin-top: 20px;
+  margin-top: 6px;
   font-size: 28px;
   color: blue;
 }
