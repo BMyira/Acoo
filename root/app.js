@@ -55,6 +55,28 @@ function currentTime(date) {
   return `${formatDate} ${hour}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast-date">
+  <div class="weather-forecast-day">${day}</div>
+  <div class="weather-forecast-icon">🌤</div>
+  <div class="weather-forecast-temperatures">
+    <div class="weather-forecast-temperature">
+      <strong>10°</strong>
+    </div>
+    <div class="weather-forecast-temperature">15°</div>
+  </div>
+</div>`;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCity);
 
@@ -63,3 +85,4 @@ let currentDate = new Date();
 formattedTime.innerHTML = currentTime(currentDate);
 
 showCity("Hamburg");
+showForecast();

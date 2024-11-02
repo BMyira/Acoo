@@ -130,22 +130,27 @@ main {
 }
 
 .search-button {
+  outline: 1px solid white;
+  outline-offset: 0.2rem;
   background-color: #371610;
   color: white;
   border: 1px solid white;
   border-radius: 16px;
   width: 15%;
-  padding: 15px 20px 15px 18px;
-  margin: 0 -80px;
+  padding: 13px 20px 13px 18px;
+  margin: 0 -75px;
   font-size: 16px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .search-button:hover {
+  outline: 1rem;
+  outline: 2px solid #371610;
+  outline-offset: 0.2rem;
   cursor: pointer;
   background-color: white;
-  border: 2px solid #371610;
   color: #371610;
+  transition: 2ms ease-in;
 }
 
 .search-form {
@@ -166,33 +171,32 @@ main {
 .weather-forecast-temperatures {
   display: flex;
 }
-
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  background-image: url(" ../media/Acoo.jpg");
+  font-size: 16px;
+  background-image: url("../media/Acoo.jpg");
   border-radius: 16px;
-  padding: 20px 30px;
+  padding: 10px;
   margin-top: 20px;
-
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .weather-forecast-day {
   text-align: center;
-  font-size: 16px;
-  line-height: 20px;
   color: blue;
   font-weight: bold;
 }
+
 .weather-forecast-icon {
-  text-align: center;
   font-size: 35px;
+  text-align: center;
 }
 
 .weather-forecast-temperatures {
   display: flex;
   justify-content: center;
+  font-size: 15px;
 }
 
 .weather-forecast-temperature {
