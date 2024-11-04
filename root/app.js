@@ -1,6 +1,4 @@
 function displayTemperature(response) {
-  console.log(response.data);
-
   let weatherAppCity = document.querySelector("#weather-app-city");
   weatherAppCity.innerHTML = response.data.city;
   let timeElement = document.querySelector("#day-time");
@@ -18,6 +16,8 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = `${Math.round(
     response.data.temperature.current
   )}`;
+
+  getForecast(response.data.city);
 }
 
 function displayTime(date) {
@@ -51,33 +51,53 @@ function showCity(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-function displayForecast() {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-  let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="weather-forecast">
-            <div class="weather-day"><strong>${day}</strong></div>
-            <div class="weather-icon">🌤</div>
-            <div class="weather-temperatures">
-              <div class="weather-degree"><strong>19°</strong></div>
-              <div clsaa="weather-degree">10°</div>
-            </div>
-            </div>
-   `;
-  });
-  let weatherAppFuture = document.querySelector("#weather-app-future");
-  weatherAppFuture.innerHTML = forecastHtml;
-}
-
 function displayCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
   showCity(searchInput.value);
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+  let apiKey = "25104bod8aab713e851f420cccb3td47";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastHtml = "";
+  response.data.daily.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="weather-forecast">
+            <div class="weather-day"><strong>${formatDate(
+              day.time
+            )}</strong></div>
+             <img src="${day.condition.icon_url}" class="weather-icon" />
+            <div class="weather-temperatures">
+              <div class="weather-degree"><strong>${Math.round(
+                day.temperature.maximum
+              )}°</strong></div>
+              <div clsaa="weather-degree">${Math.round(
+                day.temperature.minimum
+              )}°</div>
+            </div>
+            </div>
+   `;
+    }
+  });
+  let weatherAppFuture = document.querySelector("#weather-app-future");
+  weatherAppFuture.innerHTML = forecastHtml;
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCity);
 showCity("Cape Town");
-displayForecast();
