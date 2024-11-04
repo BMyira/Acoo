@@ -32,20 +32,24 @@
       <main>
         <div class="weather-app">
           <div>
-            <h1 class="weather-app-city" id="weather-app-city">Paris</h1>
+            <h1 class="weather-app-city" id="weather-app-city"></h1>
             <p class="weather-app-details">
-              <span class="day-time">Tue 14:30</span>,
-              <span>Broken clouds</span>
+              <span class="day-time" id="day-time"></span>,
+              <span id="description"></span>
               <br />
               Humidity:
-              <span class="humidity">14% </span> , Wind:
-              <span class="wind-speed"> 2.45km/h </span>
+              <span class="humidity" id="humidity"> </span> , Wind:
+              <span class="wind-speed" id="wind-speed"></span>
             </p>
           </div>
           <div class="weather-app-temperature">
-            <div class="weather-app-icon">🌤</div>
-            <div class="weather-app-value">25</div>
-            <div class="weather-app-unit">°C</div>
+            <div id="icon"></div>
+            <div class="weather-app-value" id="temperature"></div>
+            <div class="weather-app-unit" id="unit">°C</div>
+          </div>
+        </div>
+        <div class="weather-app-future" id="weather-app-future">
+          
           </div>
         </div>
       </main>
